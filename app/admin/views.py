@@ -220,7 +220,7 @@ def tag_list(page=None):
         page = 1
     page_data = Tag.query.order_by(
         Tag.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/tag_list.html", page_data=page_data)
 
 
@@ -295,7 +295,7 @@ def movie_list(page=None):
         Tag.id == Movie.tag_id
     ).order_by(
         Movie.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/movie_list.html", page_data=page_data)
 
 
@@ -320,7 +320,7 @@ def movie_edit(id=None):
         movie_count = Movie.query.filter_by(title=data["title"]).count()
         # 存在一步名字叫这个的饮食，有可能是它自己，也有可能是同名。如果是现在的movie不等于要提交的数据中title。那么说明有两个。
         if movie_count == 1 and movie.title != data["title"]:
-            flash("片名已经存在！", "err")
+            flash("店名已经存在！", "err")
             return redirect(url_for('admin.movie_edit', id=id))
         # 创建目录
         if not os.path.exists(app.config["UP_DIR"]):
@@ -403,7 +403,7 @@ def preview_list(page=None):
         page = 1
     page_data = Preview.query.order_by(
         Preview.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/preview_list.html", page_data=page_data)
 
 
@@ -459,7 +459,7 @@ def user_list(page=None):
         page = 1
     page_data = User.query.order_by(
         User.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/user_list.html", page_data=page_data)
 
 
@@ -516,7 +516,7 @@ def comment_list(page=None):
         User.id == Comment.user_id
     ).order_by(
         Comment.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/comment_list.html", page_data=page_data)
 
 
@@ -558,7 +558,7 @@ def moviecol_list(page=None):
         User.id == Moviecol.user_id
     ).order_by(
         Moviecol.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/moviecol_list.html", page_data=page_data)
 
 
@@ -596,7 +596,7 @@ def oplog_list(page=None):
         Admin.id == Oplog.admin_id,
     ).order_by(
         Oplog.addtime.desc()
-    ).paginate(page=page, per_page=10)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/oplog_list.html", page_data=page_data)
 
 
@@ -615,7 +615,7 @@ def adminloginlog_list(page=None):
         Admin.id == Adminlog.admin_id,
     ).order_by(
         Adminlog.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/adminloginlog_list.html", page_data=page_data)
 
 
@@ -634,7 +634,7 @@ def userloginlog_list(page=None):
         User.id == Userlog.user_id,
     ).order_by(
         Userlog.addtime.desc()
-    ).paginate(page=page, per_page=2)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/userloginlog_list.html", page_data=page_data)
 
 
@@ -670,7 +670,7 @@ def role_list(page=None):
         page = 1
     page_data = Role.query.order_by(
         Role.addtime.desc()
-    ).paginate(page=page, per_page=2)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/role_list.html", page_data=page_data)
 
 
@@ -742,7 +742,7 @@ def auth_list(page=None):
         page = 1
     page_data = Auth.query.order_by(
         Auth.addtime.desc()
-    ).paginate(page=page, per_page=2)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/auth_list.html", page_data=page_data)
 
 
@@ -818,5 +818,5 @@ def admin_list(page=None):
         Role.id == Admin.role_id
     ).order_by(
         Admin.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=12)
     return render_template("admin/admin_list.html", page_data=page_data)

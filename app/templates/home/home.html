@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
-    <title>sotwo</title>
+    <title>sotwo饮食</title>
     <link rel="shortcut icon" href="{{ url_for('static',filename='base/images/logo.png') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='base/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='base/css/bootstrap-movie.css') }}">
@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="{{url_for('home.index')}}" class="navbar-brand" style="width:250px;">
-                <img src="{{ url_for('static',filename='base/images/logo.png') }}" style="height:30px;">
+                <img src="{{ url_for('static',filename='base/images/logo.png') }}" style="height:30px;"> 饮食
             </a>
         </div>
         <!--小屏幕导航按钮和logo-->
@@ -44,7 +44,7 @@
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-left" role="search" style="margin-top:18px;">
                 <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="喜欢吃啥，说，尽管说！" id="key_movie">
+                    <input type="text" class="form-control" placeholder="请输入饮食喜好……" id="key_movie">
                     <span class="input-group-btn">
                         <a class="btn btn-default" id="do_search"><span class="glyphicon glyphicon-search"></span>&nbsp;我查</a>
                     </span>

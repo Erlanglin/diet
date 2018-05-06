@@ -74,15 +74,15 @@ class TagForm(FlaskForm):
 
 class MovieForm(FlaskForm):
     title = StringField(
-        label="片名",
+        label="店名",
         validators=[
-            DataRequired("片名不能为空！")
+            DataRequired("店名不能为空！")
         ],
-        description="片名",
+        description="店名",
         render_kw={
             "class": "form-control",
             "id": "input_title",
-            "placeholder": "请输入片名！"
+            "placeholder": "请输入店名！"
         }
     )
     url = FileField(
@@ -149,14 +149,14 @@ class MovieForm(FlaskForm):
         }
     )
     length = StringField(
-        label="片长",
+        label="评价",
         validators=[
-            DataRequired("片长不能为空！")
+            DataRequired("评价不能为空！")
         ],
-        description="片长",
+        description="评价",
         render_kw={
             "class": "form-control",
-            "placeholder": "请输入片长！"
+            "placeholder": "请输入评价！"
         }
     )
     release_time = StringField(

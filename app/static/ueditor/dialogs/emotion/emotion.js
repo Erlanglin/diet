@@ -119,7 +119,7 @@ function createTab( tabName ) {
             tab = $G( tabName ), //获取将要生成的Div句柄
             imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //获取显示表情和预览表情的路径
             positionLine = 11 / 2, //中间数
-            iWidth = iHeight = 35, //图片长宽
+            iWidth = iHeight = 35, //图评价宽
             iColWidth = 3, //表格剩余空间的显示比例
             tableCss = emotion.imageCss[tabName],
             cssOffset = emotion.imageCssOffset[tabName],
